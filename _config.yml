@@ -2,6 +2,7 @@ name: clcherliograph
 favicon: null
 layout_spectrum: 0.52242
 typography_spectrum: 0.2776178165804595
+title: Herliograph
 cta:
   domain: null
   bucket: null

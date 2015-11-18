@@ -1,0 +1,23 @@
+name: clcherliograph
+favicon: null
+layout_spectrum: 0.46904171584174037
+typography_spectrum: 0.2776178165804595
+cta:
+  domain: null
+  bucket: null
+  version: null
+analytics:
+  google: null
+  facebook: null
+  twitter: null
+opengraph:
+  image: null
+  type: null
+  appId: null
+color:
+  brandColors: []
+  brandStrength: 0.9654988537076861
+  lightness: 0.4187723654322326
+  saturation: 0.08514819317497313
+  rhythmicContrast: 0.46596306981518865
+purpose: []

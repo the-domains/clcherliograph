@@ -2,16 +2,23 @@
     <channel>
         <title><![CDATA[Herliograph]]></title>
         <description><![CDATA[Herliograph]]></description>
-        <link>http://github.com/dylang/node-rss</link>
+        <link>https://thegrid.ai/clcherliograph/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Mon, 23 Nov 2015 22:45:56 GMT</lastBuildDate>
-        <atom:link href="undefinedrss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Mon, 23 Nov 2015 22:54:48 GMT</lastBuildDate>
+        <atom:link href="https://thegrid.ai/clcherliograph/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[No title]]></title>
             <description><![CDATA[<img src="https://the-grid-user-content.s3-us-west-2.amazonaws.com/0a7c102f-bee4-4782-8132-77a53bb21b32.jpg">]]></description>
-            <link>undefinede733a76f-850e-4f89-91f9-d74007f4e1d6/index.html</link>
+            <link>https://thegrid.ai/clcherliograph/e733a76f-850e-4f89-91f9-d74007f4e1d6/index.html</link>
             <guid isPermaLink="false">e733a76f-850e-4f89-91f9-d74007f4e1d6</guid>
             <pubDate>Mon, 23 Nov 2015 22:45:47 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[<img src="https://the-grid-user-content.s3-us-west-2.amazonaws.com/97f58f85-5868-418b-ae34-372993ec3b5b.jpg">]]></description>
+            <link>https://thegrid.ai/clcherliograph/a9bb58f2-6043-4bb4-a97b-99e685e38a5d/index.html</link>
+            <guid isPermaLink="false">a9bb58f2-6043-4bb4-a97b-99e685e38a5d</guid>
+            <pubDate>Mon, 23 Nov 2015 22:54:34 GMT</pubDate>
         </item>
     </channel>
 </rss>

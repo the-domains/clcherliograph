@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>clcherliograph</title><link href="../rss.xml" title="Herliograph feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.16.25"><meta name="the-grid-solution" content="d101e0ed-cfa2-41a0-a9ab-5e13ff98713c"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
+<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>clcherliograph</title><link href="../rss.xml" title="Herliograph feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.3"><meta name="the-grid-solution" content="1dfe5b98-7324-4e33-a752-77459f049d3e"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
 @media (min-width: 15.6875em)and (max-width: 15.75em){	html{font-size:3.28125em !important}}
 @media (min-width: 15.8125em)and (max-width: 16.25em){	html{font-size:3.375em !important}}
 @media (min-width: 16.3125em)and (max-width: 16.6875em){html{font-size:3.46875em !important}}
@@ -202,6 +202,14 @@ body {
 }
 .stack {
   z-index: 1;
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+}
+.group,
+.aside,
+.decoration {
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 picture {
   display: inline-block;
@@ -250,6 +258,9 @@ a:active {
   transition: color 0.1s ease-in, background-color 0.1s ease-out;
   -webkit-transition: color 0.1s ease-in, background-color 0.1s ease-out;
 }
+a.aside {
+  display: inline-block;
+}
 html.exporting a {
   transition: none;
 }
@@ -259,11 +270,21 @@ html.exporting a {
 .media > a {
   display: inline-block;
 }
+.media iframe {
+  transition: 0.3s opacity ease-in;
+  -webkit-transition: 0.3s opacity ease-in;
+}
 h1 a,
 h2 a,
 h3 a {
   font-weight: inherit;
   letter-spacing: inherit;
+}
+a {
+  -webkit-box-decoration-break: clone;
+  -ms-box-decoration-break: clone;
+  -moz-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .text-decoration {
   -webkit-box-decoration-break: clone;
@@ -277,36 +298,50 @@ h3 a {
   margin-left: 1.5em;
 }
 .decoration {
-  position: relative;
   pointer-events: none;
+}
+.svg {
+  position: relative;
   background-color: currentColor;
 }
-.decoration > svg {
+.svg > svg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.decoration.connector > svg {
+.svg.connector > svg {
   width: 109%;
   height: 109%;
   margin-left: -2%;
 }
-.decoration path,
-.decoration ellipse,
-.decoration rect,
-.decoration polygon,
-.decoration circle {
+.svg path,
+.svg ellipse,
+.svg rect,
+.svg polygon,
+.svg circle {
   fill: currentColor;
 }
-.decoration mpath,
-.decoration line,
-.decoration polyline {
+.svg mpath,
+.svg line,
+.svg polyline {
   stroke: currentColor;
 }
-.svg.decoration {
+.svg {
   background-color: transparent;
+}
+.revealed .play.svg:after {
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -20px;
+  background-color: currentColor;
+  content: "";
 }
 .colors-style-aside-border .publisher,
 .colors-style-aside-border .author {
@@ -443,7 +478,8 @@ ul {
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); color: rgb(243, 243, 243); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed :hover.media.cover { color: rgb(4, 4, 4); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph { color: rgb(242, 242, 242); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a { color: rgb(159, 159, 159); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a:hover { color: rgb(84, 84, 84); }
@@ -522,7 +558,8 @@ display: none;
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); color: rgb(243, 243, 243); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed :hover.media.cover { color: rgb(4, 4, 4); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph { color: rgb(242, 242, 242); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a { color: rgb(159, 159, 159); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a:hover { color: rgb(84, 84, 84); }
@@ -601,7 +638,8 @@ display: none;
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); color: rgb(243, 243, 243); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed :hover.media.cover { color: rgb(4, 4, 4); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph { color: rgb(242, 242, 242); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a { color: rgb(159, 159, 159); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a:hover { color: rgb(84, 84, 84); }
@@ -680,7 +718,8 @@ display: none;
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); color: rgb(243, 243, 243); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed :hover.media.cover { color: rgb(4, 4, 4); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph { color: rgb(242, 242, 242); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a { color: rgb(159, 159, 159); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a:hover { color: rgb(84, 84, 84); }
@@ -759,7 +798,8 @@ display: none;
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.304rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.304rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.304rem;}
-#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); color: rgb(243, 243, 243); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed :hover.media.cover { color: rgb(4, 4, 4); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph { color: rgb(242, 242, 242); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a { color: rgb(159, 159, 159); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a:hover { color: rgb(84, 84, 84); }
@@ -838,7 +878,8 @@ display: none;
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.234rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.234rem;}
 #u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.234rem;}
-#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .media.cover { background-image: linear-gradient(rgb(3, 3, 3), rgb(243, 243, 243)); color: rgb(243, 243, 243); }
+#u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed :hover.media.cover { color: rgb(4, 4, 4); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph { color: rgb(242, 242, 242); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a { color: rgb(159, 159, 159); }
 #u-7665dee6-dc63-4208-983d-352b6e8db335#u-7665dee6-dc63-4208-983d-352b6e8db335 .group.mixed > .text.paragraph a:hover { color: rgb(84, 84, 84); }
@@ -885,7 +926,7 @@ wbr.w1800{ display: block }
  #u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-3 {
 display: none;
 }
-}</style></head><body><div class="layout-system rust mobile" id="page-62b5737f-7ae2-4fed-8f1b-350862399047"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-3-l-one"></div><style id="u-62b5737f-7ae2-4fed-8f1b-350862399047-color">body{background-color: rgba(32, 23, 21, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-nav"><div kind="group" index="heading" class="group heading group heading" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-nav-g-heading-t-headline-a">Herliograph</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack mixed i first_chapter w_cover w_media w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text stack mixed" itemid="7665dee6-dc63-4208-983d-352b6e8db335" itemtype="text" diff_index="0" index="mixed" kind="stack" score="5.625" missed="0.375" tag="article" id="u-7665dee6-dc63-4208-983d-352b6e8db335"><div kind="group" index="mixed" class="group mixed group mixed" id="u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed"><a kind="media" index="cover" class="vfld media cover vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="1600" max-height="1067" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/f6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg" id="u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-m-cover"><picture id="u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/8663d8262838f8e3ac24deeac18e4527/passthrough.jpg?height=480&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=720, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/0508909fd59d11ea34374b5c92ce2f83/passthrough.jpg?height=960&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=1440 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/96e4a8b34be1213790a81918faa353f6/passthrough.jpg?height=481&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=721, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1b512c39dae0debfde4f6ab78d5258cb/passthrough.jpg?height=962&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=1442 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/560a68b77f674a69b6502d0389db9e57/passthrough.jpg?height=257&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=384, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/dab413b6b4306e099b8ea7ee966da5c6/passthrough.jpg?height=514&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=768 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f88531637069ab1aac39f9731d17d08c/passthrough.jpg?height=385&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/480db66de79619dc101d9e86a68cd85c/passthrough.jpg?height=770&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=1152 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/560a68b77f674a69b6502d0389db9e57/passthrough.jpg?height=257&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=384, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/dab413b6b4306e099b8ea7ee966da5c6/passthrough.jpg?height=514&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=768 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f88531637069ab1aac39f9731d17d08c/passthrough.jpg?height=385&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/480db66de79619dc101d9e86a68cd85c/passthrough.jpg?height=770&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=1152 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader text paragraph" specificity="0.25" itemprop="text" id="u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph"><p><span class="first-letter">T</span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>he Mindful Chef</p><p><span class="first-letter"> </span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Self-Description - passionate, vulnerable</p><p><span class="first-letter"> </span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Her Inner Light - creative energy that comes both from <wbr class="w480 w960"></wbr>within and from a higher power </p><p><i data-grid-id="ffaae9a3-45d1-4ae3-a055-446c7df00c28"></i><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Her message to women everywhere - &#x201C;It is in our nature as <wbr class="w480 w960"></wbr>women to give, but we <wbr class="w1799"></wbr>forget <wbr class="w481 w961"></wbr>about ourselves. We put <wbr class="w480 w960 w1800"></wbr>ourselves last. That is the saddest thing. It doesn&#x2019;t do <wbr class="w480 w960 w1799"></wbr>anybody <wbr class="w481 w961"></wbr>any good. If you&#x2019;re passionate about something, <wbr class="w480 w960"></wbr>you <wbr class="w1800"></wbr>want to do something you <wbr class="w1799"></wbr>love, you <wbr class="w481 w961"></wbr>may need to be <wbr class="w480 w960"></wbr>selfish. If you believe you have something to give then give <wbr class="w480 w960"></wbr>to <wbr class="w1799 w1800"></wbr>yourself <wbr class="w481 w961"></wbr>first. If you need help, ask for help.&#x201D;</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="e82ce294-355e-4dff-a56c-dab5610916e7" itemtype="text" diff_index="1" index="column" kind="stack" score="2.625" missed="0.375" tag="article" id="u-e82ce294-355e-4dff-a56c-dab5610916e7"><div kind="group" index="column" class="group column group column" id="u-e82ce294-355e-4dff-a56c-dab5610916e7-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-e82ce294-355e-4dff-a56c-dab5610916e7-g-column-t-paragraph"><p><span class="first-letter">B</span>orn and raised in Thailand, Komoot came to the US in <wbr class="w480 w960"></wbr>search of more to life. She <wbr class="w1799"></wbr>started <wbr class="w481 w961"></wbr>as a graduate student in <wbr class="w480 w960 w1800"></wbr>interior architecture and launched a successful career <wbr class="w1799"></wbr>in <wbr class="w480 w960"></wbr>interior <wbr class="w481 w961"></wbr>design. But Komoot&#x2019;s passion had long been in <wbr class="w480 w960"></wbr>food. <wbr class="w1800"></wbr>Since she was a little <wbr class="w1799"></wbr>girl, she loved <wbr class="w481 w961"></wbr>to eat, to cook, to <wbr class="w480 w960"></wbr>be around food. "I used food for a lot of things to the <wbr class="w1799"></wbr>point <wbr class="w480 w960"></wbr>that I <wbr class="w1800"></wbr>ate <wbr class="w481 w961"></wbr>emotionally. Even though I dreamed about a <wbr class="w480 w960"></wbr>career in food, I didn&#x2019;t <wbr class="w1799"></wbr>dare to pursue it.&#x201D; In <wbr class="w481 w961"></wbr>2009 she was <wbr class="w480 w960"></wbr>an <wbr class="w1800"></wbr>executive at a design firm, a position she enjoyed, <wbr class="w1799"></wbr>and <wbr class="w480 w960"></wbr>she imagined <wbr class="w481 w961"></wbr>growing with the company for a long time. <wbr class="w480 w960"></wbr>After <wbr class="w1800"></wbr>twenty years in the <wbr class="w1799"></wbr>design world, she felt <wbr class="w481 w961"></wbr>she had her <wbr class="w480 w960"></wbr>life figured out. "I was proud of what I&#x2019;d <wbr class="w1799"></wbr>accomplished, for <wbr class="w480 w960"></wbr>a <wbr class="w1800"></wbr>Thai woman to <wbr class="w481 w961"></wbr>have gone so far in the design business in <wbr class="w480 w960"></wbr>America.&#x201D; <wbr class="w1799"></wbr>Then one day before her birthday, <wbr class="w481 w961"></wbr>everything <wbr class="w480 w960 w1800"></wbr>shifted. The economic decline led to the <wbr class="w1799"></wbr>collapse of the <wbr class="w480 w960"></wbr>company, and Komoot <wbr class="w481 w961"></wbr>was let go. She lost her financial <wbr class="w480 w960 w1800"></wbr>security, but <wbr class="w1799"></wbr>more significantly, she lost her identity. .&#x201D; <wbr class="w481 w961"></wbr>In <wbr class="w480 w960"></wbr>that instant she reframed the change as an <wbr class="w1799"></wbr>opportunity to <wbr class="w480 w960 w1800"></wbr>start fresh. <i>this has to be a <wbr class="w481 w961"></wbr>gift</i>Amidst the uncertainty and <wbr class="w480 w960"></wbr>loss she felt <wbr class="w1799"></wbr>that day, Komoot recalls a vivid moment of <wbr class="w480 w481 w960 w961 w1800"></wbr>clarity. "Since this happened the day before <wbr class="w1799"></wbr>my birthday, I <wbr class="w480 w960"></wbr>said to myself During the <wbr class="w481 w961"></wbr>months that followed Komoot <wbr class="w480 w960 w1800"></wbr>asked herself, <wbr class="w1799"></wbr>&#x201C;What do I need to learn from this?&#x201D; Seeking <wbr class="w480 w481 w960 w961"></wbr>clarity, she decluttered her life, and all <wbr class="w1799"></wbr>around she found <wbr class="w480 w960 w1800"></wbr>signs of her long-time love <wbr class="w481 w961"></wbr>affair with food. In the margin <wbr class="w480 w960"></wbr>of one <wbr class="w1799"></wbr>book, she found a note she&#x2019;d written to herself <wbr class="w481 w961"></wbr>years <wbr class="w480 w960 w1800"></wbr>ago, &#x201C;Go to culinary school.&#x201D; This <wbr class="w1799"></wbr>message sent a jolt <wbr class="w480 w960"></wbr>through her system. She could <wbr class="w481 w961"></wbr>no longer avoid facing her <wbr class="w480 w960 w1800"></wbr>greatest <wbr class="w1799"></wbr>fear that was also her truest desire. She researched <wbr class="w480 w481 w960 w961"></wbr>different schools and quickly <wbr class="w1799"></wbr>realized that she didn&#x2019;t <wbr class="w1800"></wbr>want <wbr class="w480 w960"></wbr>to cook in the classical <wbr class="w481 w961"></wbr>methods, which emphasizing taste <wbr class="w480 w960 w1799"></wbr>leaned heavily on creams and sugars. Humbled by her <wbr class="w481 w961 w1800"></wbr>own <wbr class="w480 w960"></wbr>experience with emotional <wbr class="w1799"></wbr>eating that had also led to <wbr class="w480 w960"></wbr>chronic illness, she set out to <wbr class="w481 w961"></wbr>approach cooking differently. <wbr class="w480 w960 w1799 w1800"></wbr>She would redefine food as a healthy force in her life. &#x201C;I <wbr class="w481 w961"></wbr>had <wbr class="w480 w960"></wbr>my awakening: My path to <wbr class="w1799"></wbr>healing was by healing others <wbr class="w480 w960 w1800"></wbr>through healthy cooking." <wbr class="w481 w961"></wbr>Healing medicinal nutrients <wbr class="w480 w960 w1799"></wbr>from different cultures and flavors around the world made <wbr class="w480 w481 w960 w961"></wbr>in a <wbr class="w1800"></wbr>mindful manner that <wbr class="w1799"></wbr>expresses loving kindness and <wbr class="w480 w960"></wbr>respect to your wellbeing and <wbr class="w481 w961"></wbr>our planet.&#x201D; <i>empowering <wbr class="w1799"></wbr>treats <wbr class="w480 w960"></wbr>with <wbr class="w1800"></wbr>loving kindness.</i> &#x2014; seasonal, organic, unprocessed and <wbr class="w480 w481 w960 w961"></wbr>local &#x2014; is the marrow of <wbr class="w1799"></wbr>Komoot's fare. &#x201C;My speciality is <wbr class="w480 w960"></wbr>what I <wbr class="w1800"></wbr>call <i>SOUL-ful</i>Komoot <wbr class="w481 w961"></wbr>trained at Bauman College, <wbr class="w1799"></wbr>a <wbr class="w480 w960"></wbr>pioneer in holistic nutrition and culinary arts. She became <wbr class="w480 w481 w960 w961"></wbr>a <wbr class="w1800"></wbr>certified therapeutic chef <wbr class="w1799"></wbr>and launched The Mindful <wbr class="w480 w960"></wbr>Feast [link], a soulful company <wbr class="w481 w961"></wbr>offering personal chef <wbr class="w480 w960 w1799"></wbr>services. <wbr class="w1800"></wbr>The Mindful Feast is shrimp with avocado, <wbr class="w480 w960"></wbr>cucumber and <wbr class="w481 w961"></wbr>mango salad with <wbr class="w1799"></wbr>vermicelli served in butter <wbr class="w480 w960"></wbr>lettuce cups. <wbr class="w1800"></wbr>The Mindful Feast is ribeye <wbr class="w481 w961"></wbr>steaks with <wbr class="w480 w960"></wbr>kimchi <wbr class="w1799"></wbr>and rice rolled on nori wraps. The Mindful Feast is <wbr class="w480 w960"></wbr>balsamic glazed <wbr class="w481 w961 w1800"></wbr>lamb chops with <wbr class="w1799"></wbr>saut&#xE9;ed vegetables and <wbr class="w480 w960"></wbr>mashed potatoes. The Mindful Feast is turkey <wbr class="w481 w961"></wbr>meatballs <wbr class="w480 w960"></wbr>and <wbr class="w1799"></wbr>mixed <wbr class="w1800"></wbr>vegetables miso soup with sweet potato noodles. <wbr class="w480 w960"></wbr>The Mindful Feast <wbr class="w481 w961"></wbr>is a delight <wbr class="w1799"></wbr>of colors, taste, texture and <wbr class="w480 w960"></wbr>smell. For <wbr class="w1800"></wbr>the young and grown, for couples and <wbr class="w481 w961"></wbr>families, <wbr class="w480 w960 w1799"></wbr>Komoot&#x2019;s treats feed the belly and nourish the soul. Five <wbr class="w480 w960"></wbr>years into <wbr class="w1800"></wbr>making The <wbr class="w481 w961"></wbr>Mindful <wbr class="w1799"></wbr>Feast, Komoot cooks in <wbr class="w480 w960"></wbr>homes with very different needs. Some have special <wbr class="w481 w961"></wbr>diets, <wbr class="w480 w960 w1799"></wbr>others are <wbr class="w1800"></wbr>recovering from serious illnesses, several have <wbr class="w480 w960"></wbr>growing children. <wbr class="w481 w961"></wbr>Komoot <wbr class="w1799"></wbr>expresses deep gratitude for <wbr class="w480 w960"></wbr>each of them. <wbr class="w1800"></wbr>"The people who are my clients are my <wbr class="w480 w481 w960 w961 w1799"></wbr>healers. I see them taking care of themselves and their <wbr class="w480 w960"></wbr>families, and I feel <wbr class="w1800"></wbr>blessed to be <wbr class="w481 w961 w1799"></wbr>playing a role in their <wbr class="w480 w960"></wbr>intention for self-care. The more I do this, the more deeply <wbr class="w480 w960"></wbr>I care <wbr class="w481 w961 w1799"></wbr>for my clients <wbr class="w1800"></wbr>and the more I see how I must do this <wbr class="w480 w960"></wbr>with integrity. Cooking is <wbr class="w481 w961 w1799"></wbr>demanding work, and I need to <wbr class="w480 w960"></wbr>take care of my body <wbr class="w1800"></wbr>so that I can stand for long hours <wbr class="w481 w961 w1799"></wbr>and <wbr class="w480 w960"></wbr>craft the meals. I cannot lead a double life. I can&#x2019;t just <wbr class="w480 w960"></wbr>preach healthy eating, <wbr class="w1800"></wbr>cook <wbr class="w481 w961 w1799"></wbr>and present healthy food for <wbr class="w480 w960"></wbr>others and then at the end of the day, I&#x2019;m doing the <wbr class="w480 w960 w1799"></wbr>opposite <wbr class="w481 w961"></wbr>to myself. Cooking The <wbr class="w1800"></wbr>Mindful Feast keeps me on <wbr class="w480 w960"></wbr>my healing path." One of <wbr class="w1799"></wbr>Komoot&#x2019;s <wbr class="w481 w961"></wbr>biggest fans is a small <wbr class="w480 w960"></wbr>boy who clamors around her in <wbr class="w1800"></wbr>the kitchen. He wants <wbr class="w1799"></wbr>to <wbr class="w480 w960"></wbr>know <wbr class="w481 w961"></wbr>what&#x2019;s making the wok sizzle, what makes for the <wbr class="w480 w960"></wbr>bright colors whirling inside <wbr class="w1799"></wbr>the <wbr class="w481 w961 w1800"></wbr>blender, what will go into <wbr class="w480 w960"></wbr>the salad. Pineapple or mango? Mint or sprouts? <wbr class="w1799"></wbr>Almonds, <wbr class="w480 w481 w960 w961"></wbr>cashews or peanuts? Then his <wbr class="w1800"></wbr>favorite question: &#x201C;Komoot, <wbr class="w480 w960"></wbr>may I please try <wbr class="w1799"></wbr>some?&#x201D; And <wbr class="w481 w961"></wbr>he&#x2019;s never disappointed. When <wbr class="w480 w960"></wbr>he savors her treat of loving <wbr class="w1800"></wbr>kindness, it&#x2019;s <wbr class="w1799"></wbr>hard to tell who <wbr class="w480 w481 w960 w961"></wbr>has the bigger smile. As Komoot would say, "Some of us <wbr class="w480 w960"></wbr>give what we <wbr class="w1799"></wbr>need to receive. <wbr class="w481 w961 w1800"></wbr>Some of us teach what we <wbr class="w480 w960"></wbr>need to learn." </p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-alternate-g-heading-t-headline-a">Herliograph feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-3-l-one"></div><style id="u-62b5737f-7ae2-4fed-8f1b-350862399047-color">body{background-color: rgba(32, 23, 21, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-3-l-one"></div><style id="u-62b5737f-7ae2-4fed-8f1b-350862399047-color">body{background-color: rgba(32, 23, 21, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+}</style></head><body><div class="layout-system rust mobile" id="page-62b5737f-7ae2-4fed-8f1b-350862399047"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-mobile-l-one-3-l-one"></div><style id="u-62b5737f-7ae2-4fed-8f1b-350862399047-color">body{background-color: rgba(32, 23, 21, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-nav"><div kind="group" index="heading" class="group heading group heading" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-nav-g-heading-t-headline-a">Herliograph</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack mixed i first_chapter w_cover w_media w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text stack mixed" itemid="7665dee6-dc63-4208-983d-352b6e8db335" itemtype="text" diff_index="0" index="mixed" kind="stack" score="3.625" missed="0.375" tag="article" id="u-7665dee6-dc63-4208-983d-352b6e8db335"><div kind="group" index="mixed" class="group mixed group mixed" id="u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed"><a kind="media" index="cover" class="vfld media cover vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="1600" max-height="1067" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/f6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg" id="u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-m-cover"><picture id="u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/8663d8262838f8e3ac24deeac18e4527/passthrough.jpg?height=480&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=720, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/0508909fd59d11ea34374b5c92ce2f83/passthrough.jpg?height=960&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=1440 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/96e4a8b34be1213790a81918faa353f6/passthrough.jpg?height=481&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=721, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1b512c39dae0debfde4f6ab78d5258cb/passthrough.jpg?height=962&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=1442 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/560a68b77f674a69b6502d0389db9e57/passthrough.jpg?height=257&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=384, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/dab413b6b4306e099b8ea7ee966da5c6/passthrough.jpg?height=514&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=768 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f88531637069ab1aac39f9731d17d08c/passthrough.jpg?height=385&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/480db66de79619dc101d9e86a68cd85c/passthrough.jpg?height=770&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=1152 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/560a68b77f674a69b6502d0389db9e57/passthrough.jpg?height=257&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=384, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/dab413b6b4306e099b8ea7ee966da5c6/passthrough.jpg?height=514&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=768 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f88531637069ab1aac39f9731d17d08c/passthrough.jpg?height=385&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/480db66de79619dc101d9e86a68cd85c/passthrough.jpg?height=770&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Ff6c3f6104d41bb0a0a3b4b04ec8106bfb10813e3.jpg&width=1152 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader text paragraph" specificity="0.25" itemprop="text" id="u-7665dee6-dc63-4208-983d-352b6e8db335-g-mixed-t-paragraph"><p><span class="first-letter">T</span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>he Mindful Chef</p><p><span class="first-letter"> </span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Self-Description - passionate, vulnerable</p><p><span class="first-letter"> </span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Her Inner Light - creative energy that comes both from <wbr class="w480 w960"></wbr>within and from a higher power </p><p><i data-grid-id="ffaae9a3-45d1-4ae3-a055-446c7df00c28"></i><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Her message to women everywhere - &#x201C;It is in our nature as <wbr class="w480 w960"></wbr>women to give, but we <wbr class="w1799"></wbr>forget <wbr class="w481 w961"></wbr>about ourselves. We put <wbr class="w480 w960 w1800"></wbr>ourselves last. That is the saddest thing. It doesn&#x2019;t do <wbr class="w480 w960 w1799"></wbr>anybody <wbr class="w481 w961"></wbr>any good. If you&#x2019;re passionate about something, <wbr class="w480 w960"></wbr>you <wbr class="w1800"></wbr>want to do something you <wbr class="w1799"></wbr>love, you <wbr class="w481 w961"></wbr>may need to be <wbr class="w480 w960"></wbr>selfish. If you believe you have something to give then give <wbr class="w480 w960"></wbr>to <wbr class="w1799 w1800"></wbr>yourself <wbr class="w481 w961"></wbr>first. If you need help, ask for help.&#x201D;</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="e82ce294-355e-4dff-a56c-dab5610916e7" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-e82ce294-355e-4dff-a56c-dab5610916e7"><div kind="group" index="column" class="group column group column" id="u-e82ce294-355e-4dff-a56c-dab5610916e7-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-e82ce294-355e-4dff-a56c-dab5610916e7-g-column-t-paragraph"><p><span class="first-letter">B</span>orn and raised in Thailand, Komoot came to the US in <wbr class="w480 w960"></wbr>search of more to life. She <wbr class="w1799"></wbr>started <wbr class="w481 w961"></wbr>as a graduate student in <wbr class="w480 w960 w1800"></wbr>interior architecture and launched a successful career <wbr class="w1799"></wbr>in <wbr class="w480 w960"></wbr>interior <wbr class="w481 w961"></wbr>design. But Komoot&#x2019;s passion had long been in <wbr class="w480 w960"></wbr>food. <wbr class="w1800"></wbr>Since she was a little <wbr class="w1799"></wbr>girl, she loved <wbr class="w481 w961"></wbr>to eat, to cook, to <wbr class="w480 w960"></wbr>be around food. "I used food for a lot of things to the <wbr class="w1799"></wbr>point <wbr class="w480 w960"></wbr>that I <wbr class="w1800"></wbr>ate <wbr class="w481 w961"></wbr>emotionally. Even though I dreamed about a <wbr class="w480 w960"></wbr>career in food, I didn&#x2019;t <wbr class="w1799"></wbr>dare to pursue it.&#x201D; In <wbr class="w481 w961"></wbr>2009 she was <wbr class="w480 w960"></wbr>an <wbr class="w1800"></wbr>executive at a design firm, a position she enjoyed, <wbr class="w1799"></wbr>and <wbr class="w480 w960"></wbr>she imagined <wbr class="w481 w961"></wbr>growing with the company for a long time. <wbr class="w480 w960"></wbr>After <wbr class="w1800"></wbr>twenty years in the <wbr class="w1799"></wbr>design world, she felt <wbr class="w481 w961"></wbr>she had her <wbr class="w480 w960"></wbr>life figured out. "I was proud of what I&#x2019;d <wbr class="w1799"></wbr>accomplished, for <wbr class="w480 w960"></wbr>a <wbr class="w1800"></wbr>Thai woman to <wbr class="w481 w961"></wbr>have gone so far in the design business in <wbr class="w480 w960"></wbr>America.&#x201D; <wbr class="w1799"></wbr>Then one day before her birthday, <wbr class="w481 w961"></wbr>everything <wbr class="w480 w960 w1800"></wbr>shifted. The economic decline led to the <wbr class="w1799"></wbr>collapse of the <wbr class="w480 w960"></wbr>company, and Komoot <wbr class="w481 w961"></wbr>was let go. She lost her financial <wbr class="w480 w960 w1800"></wbr>security, but <wbr class="w1799"></wbr>more significantly, she lost her identity. .&#x201D; <wbr class="w481 w961"></wbr>In <wbr class="w480 w960"></wbr>that instant she reframed the change as an <wbr class="w1799"></wbr>opportunity to <wbr class="w480 w960 w1800"></wbr>start fresh. <i>this has to be a <wbr class="w481 w961"></wbr>gift</i>Amidst the uncertainty and <wbr class="w480 w960"></wbr>loss she felt <wbr class="w1799"></wbr>that day, Komoot recalls a vivid moment of <wbr class="w480 w481 w960 w961 w1800"></wbr>clarity. "Since this happened the day before <wbr class="w1799"></wbr>my birthday, I <wbr class="w480 w960"></wbr>said to myself During the <wbr class="w481 w961"></wbr>months that followed Komoot <wbr class="w480 w960 w1800"></wbr>asked herself, <wbr class="w1799"></wbr>&#x201C;What do I need to learn from this?&#x201D; Seeking <wbr class="w480 w481 w960 w961"></wbr>clarity, she decluttered her life, and all <wbr class="w1799"></wbr>around she found <wbr class="w480 w960 w1800"></wbr>signs of her long-time love <wbr class="w481 w961"></wbr>affair with food. In the margin <wbr class="w480 w960"></wbr>of one <wbr class="w1799"></wbr>book, she found a note she&#x2019;d written to herself <wbr class="w481 w961"></wbr>years <wbr class="w480 w960 w1800"></wbr>ago, &#x201C;Go to culinary school.&#x201D; This <wbr class="w1799"></wbr>message sent a jolt <wbr class="w480 w960"></wbr>through her system. She could <wbr class="w481 w961"></wbr>no longer avoid facing her <wbr class="w480 w960 w1800"></wbr>greatest <wbr class="w1799"></wbr>fear that was also her truest desire. She researched <wbr class="w480 w481 w960 w961"></wbr>different schools and quickly <wbr class="w1799"></wbr>realized that she didn&#x2019;t <wbr class="w1800"></wbr>want <wbr class="w480 w960"></wbr>to cook in the classical <wbr class="w481 w961"></wbr>methods, which emphasizing taste <wbr class="w480 w960 w1799"></wbr>leaned heavily on creams and sugars. Humbled by her <wbr class="w481 w961 w1800"></wbr>own <wbr class="w480 w960"></wbr>experience with emotional <wbr class="w1799"></wbr>eating that had also led to <wbr class="w480 w960"></wbr>chronic illness, she set out to <wbr class="w481 w961"></wbr>approach cooking differently. <wbr class="w480 w960 w1799 w1800"></wbr>She would redefine food as a healthy force in her life. &#x201C;I <wbr class="w481 w961"></wbr>had <wbr class="w480 w960"></wbr>my awakening: My path to <wbr class="w1799"></wbr>healing was by healing others <wbr class="w480 w960 w1800"></wbr>through healthy cooking." <wbr class="w481 w961"></wbr>Healing medicinal nutrients <wbr class="w480 w960 w1799"></wbr>from different cultures and flavors around the world made <wbr class="w480 w481 w960 w961"></wbr>in a <wbr class="w1800"></wbr>mindful manner that <wbr class="w1799"></wbr>expresses loving kindness and <wbr class="w480 w960"></wbr>respect to your wellbeing and <wbr class="w481 w961"></wbr>our planet.&#x201D; <i>empowering <wbr class="w1799"></wbr>treats <wbr class="w480 w960"></wbr>with <wbr class="w1800"></wbr>loving kindness.</i> &#x2014; seasonal, organic, unprocessed and <wbr class="w480 w481 w960 w961"></wbr>local &#x2014; is the marrow of <wbr class="w1799"></wbr>Komoot's fare. &#x201C;My speciality is <wbr class="w480 w960"></wbr>what I <wbr class="w1800"></wbr>call <i>SOUL-ful</i>Komoot <wbr class="w481 w961"></wbr>trained at Bauman College, <wbr class="w1799"></wbr>a <wbr class="w480 w960"></wbr>pioneer in holistic nutrition and culinary arts. She became <wbr class="w480 w481 w960 w961"></wbr>a <wbr class="w1800"></wbr>certified therapeutic chef <wbr class="w1799"></wbr>and launched The Mindful <wbr class="w480 w960"></wbr>Feast [link], a soulful company <wbr class="w481 w961"></wbr>offering personal chef <wbr class="w480 w960 w1799"></wbr>services. <wbr class="w1800"></wbr>The Mindful Feast is shrimp with avocado, <wbr class="w480 w960"></wbr>cucumber and <wbr class="w481 w961"></wbr>mango salad with <wbr class="w1799"></wbr>vermicelli served in butter <wbr class="w480 w960"></wbr>lettuce cups. <wbr class="w1800"></wbr>The Mindful Feast is ribeye <wbr class="w481 w961"></wbr>steaks with <wbr class="w480 w960"></wbr>kimchi <wbr class="w1799"></wbr>and rice rolled on nori wraps. The Mindful Feast is <wbr class="w480 w960"></wbr>balsamic glazed <wbr class="w481 w961 w1800"></wbr>lamb chops with <wbr class="w1799"></wbr>saut&#xE9;ed vegetables and <wbr class="w480 w960"></wbr>mashed potatoes. The Mindful Feast is turkey <wbr class="w481 w961"></wbr>meatballs <wbr class="w480 w960"></wbr>and <wbr class="w1799"></wbr>mixed <wbr class="w1800"></wbr>vegetables miso soup with sweet potato noodles. <wbr class="w480 w960"></wbr>The Mindful Feast <wbr class="w481 w961"></wbr>is a delight <wbr class="w1799"></wbr>of colors, taste, texture and <wbr class="w480 w960"></wbr>smell. For <wbr class="w1800"></wbr>the young and grown, for couples and <wbr class="w481 w961"></wbr>families, <wbr class="w480 w960 w1799"></wbr>Komoot&#x2019;s treats feed the belly and nourish the soul. Five <wbr class="w480 w960"></wbr>years into <wbr class="w1800"></wbr>making The <wbr class="w481 w961"></wbr>Mindful <wbr class="w1799"></wbr>Feast, Komoot cooks in <wbr class="w480 w960"></wbr>homes with very different needs. Some have special <wbr class="w481 w961"></wbr>diets, <wbr class="w480 w960 w1799"></wbr>others are <wbr class="w1800"></wbr>recovering from serious illnesses, several have <wbr class="w480 w960"></wbr>growing children. <wbr class="w481 w961"></wbr>Komoot <wbr class="w1799"></wbr>expresses deep gratitude for <wbr class="w480 w960"></wbr>each of them. <wbr class="w1800"></wbr>"The people who are my clients are my <wbr class="w480 w481 w960 w961 w1799"></wbr>healers. I see them taking care of themselves and their <wbr class="w480 w960"></wbr>families, and I feel <wbr class="w1800"></wbr>blessed to be <wbr class="w481 w961 w1799"></wbr>playing a role in their <wbr class="w480 w960"></wbr>intention for self-care. The more I do this, the more deeply <wbr class="w480 w960"></wbr>I care <wbr class="w481 w961 w1799"></wbr>for my clients <wbr class="w1800"></wbr>and the more I see how I must do this <wbr class="w480 w960"></wbr>with integrity. Cooking is <wbr class="w481 w961 w1799"></wbr>demanding work, and I need to <wbr class="w480 w960"></wbr>take care of my body <wbr class="w1800"></wbr>so that I can stand for long hours <wbr class="w481 w961 w1799"></wbr>and <wbr class="w480 w960"></wbr>craft the meals. I cannot lead a double life. I can&#x2019;t just <wbr class="w480 w960"></wbr>preach healthy eating, <wbr class="w1800"></wbr>cook <wbr class="w481 w961 w1799"></wbr>and present healthy food for <wbr class="w480 w960"></wbr>others and then at the end of the day, I&#x2019;m doing the <wbr class="w480 w960 w1799"></wbr>opposite <wbr class="w481 w961"></wbr>to myself. Cooking The <wbr class="w1800"></wbr>Mindful Feast keeps me on <wbr class="w480 w960"></wbr>my healing path." One of <wbr class="w1799"></wbr>Komoot&#x2019;s <wbr class="w481 w961"></wbr>biggest fans is a small <wbr class="w480 w960"></wbr>boy who clamors around her in <wbr class="w1800"></wbr>the kitchen. He wants <wbr class="w1799"></wbr>to <wbr class="w480 w960"></wbr>know <wbr class="w481 w961"></wbr>what&#x2019;s making the wok sizzle, what makes for the <wbr class="w480 w960"></wbr>bright colors whirling inside <wbr class="w1799"></wbr>the <wbr class="w481 w961 w1800"></wbr>blender, what will go into <wbr class="w480 w960"></wbr>the salad. Pineapple or mango? Mint or sprouts? <wbr class="w1799"></wbr>Almonds, <wbr class="w480 w481 w960 w961"></wbr>cashews or peanuts? Then his <wbr class="w1800"></wbr>favorite question: &#x201C;Komoot, <wbr class="w480 w960"></wbr>may I please try <wbr class="w1799"></wbr>some?&#x201D; And <wbr class="w481 w961"></wbr>he&#x2019;s never disappointed. When <wbr class="w480 w960"></wbr>he savors her treat of loving <wbr class="w1800"></wbr>kindness, it&#x2019;s <wbr class="w1799"></wbr>hard to tell who <wbr class="w480 w481 w960 w961"></wbr>has the bigger smile. As Komoot would say, "Some of us <wbr class="w480 w960"></wbr>give what we <wbr class="w1799"></wbr>need to receive. <wbr class="w481 w961 w1800"></wbr>Some of us teach what we <wbr class="w480 w960"></wbr>need to learn." </p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-alternate-g-heading-t-headline-a">Herliograph feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-desktop-l-one-3-l-one"></div><style id="u-62b5737f-7ae2-4fed-8f1b-350862399047-color">body{background-color: rgba(32, 23, 21, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-62b5737f-7ae2-4fed-8f1b-350862399047-cinema-l-one-3-l-one"></div><style id="u-62b5737f-7ae2-4fed-8f1b-350862399047-color">body{background-color: rgba(32, 23, 21, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*! Hammer.JS - v1.1.3 - 2014-05-20
  * http://eightmedia.github.io/hammer.js
  *
@@ -1412,9 +1453,11 @@ global.Hamburger = require('./hamburger');
 
 global.Highlighter = require('./highlighter');
 
+global.Player = require('./player');
+
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
+},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"./player":8,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
 var appendPage, mainpage, page, ref, ref1, urls;
 
 page = require('./reflow');
@@ -1515,7 +1558,192 @@ module.exports = function() {
 };
 
 
-},{"./reflow":8}],8:[function(require,module,exports){
+},{"./reflow":9}],8:[function(require,module,exports){
+var Player, Youtube, iframe, revealed, rgb2hex;
+
+iframe = null;
+
+Youtube = null;
+
+Player = function(id, src, width, height, color, bg) {
+  if (src.indexOf('youtube') > -1) {
+    src += '&color=white&theme=light&modestbranding=1';
+  }
+  src = src.replace('COLOR', color).replace('BG', bg);
+  if (location.protocol !== 'https:') {
+    src = src.replace('https:', 'http:');
+  }
+  iframe = document.createElement('iframe');
+  iframe.id = id;
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.src = src;
+  iframe.width = width;
+  iframe.height = height;
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.left = 0;
+  iframe.style.right = 0;
+  iframe.style.position = 'absolute';
+  iframe.style.opacity = 0.2;
+  iframe.onload = function() {
+    return iframe.style.opacity = 1;
+  };
+  return iframe;
+};
+
+revealed = null;
+
+Player.reveal = function(iframe) {
+  var diff, i, left, len, parent, play, ref, ref1, sibling, target, top, translateX, translateY;
+  while (target = (target || iframe).parentNode) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (target.parentNode.classList.contains('group')) {
+        parent = target.parentNode;
+      } else {
+        parent = target;
+      }
+      revealed = iframe;
+      play = parent.getElementsByClassName('play')[0];
+      left = target.offsetWidth - play.offsetLeft - play.offsetWidth;
+      top = -play.offsetTop;
+      play.style.webkitTransformOrigin = 'top right';
+      play.style.webkitTransform = 'translateX(' + left + 'px) translateY(' + top + 'px) scale(0.5)';
+      target.classList.add('revealed');
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        if (sibling.nodeType === 1 && sibling !== parent) {
+          translateX = translateY = null;
+          if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
+            translateX = -diff;
+          }
+          if ((diff = target.offsetLeft + target.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
+            if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
+              translateX = diff;
+            }
+          }
+          if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
+            translateY = -diff;
+          }
+          if ((diff = target.offsetTop + target.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
+            if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
+              translateY = diff;
+            }
+          }
+          if (Math.abs(translateX) > Math.abs(translateY)) {
+            sibling.style.webkitTransform = 'translateY(' + translateY + 'px)';
+          } else {
+            sibling.style.webkitTransform = 'translateX(' + translateX + 'px)';
+          }
+          console.log(translateX, translateY, sibling);
+        }
+      }
+    }
+  }
+};
+
+Player.hide = function(iframe) {
+  var i, len, parent, play, ref, ref1, sibling;
+  while (parent = (parent || iframe).parentNode) {
+    if ((ref = parent.classList) != null ? ref.contains('revealed') : void 0) {
+      parent.classList.remove('revealed');
+      if (parent.parentNode.classList.contains('group')) {
+        parent = parent.parentNode;
+      }
+      play = parent.getElementsByClassName('play')[0];
+      play.style.webkitTransform = '';
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        sibling.style.webkitTransform = '';
+      }
+    }
+  }
+  return revealed = null;
+};
+
+window.addEventListener('resize', function() {
+  return setTimeout(function() {
+    return requestAnimationFrame(function() {
+      if (revealed) {
+        if (revealed.offsetWidth) {
+          return Player.reveal(revealed);
+        } else {
+          return Player.stop(revealed);
+        }
+      }
+    });
+  }, 10);
+});
+
+Player.stop = function(iframe) {
+  var old;
+  old = iframe;
+  iframe.style.opacity = 0;
+  setTimeout(function() {
+    var ref;
+    return (ref = old.parentNode) != null ? ref.removeChild(old) : void 0;
+  }, 300);
+  Player.hide(iframe);
+  return iframe = null;
+};
+
+document.addEventListener('click', function(e) {
+  var bg, color, header, parent, play, ref, ref1, results, styles, target;
+  target = e.target;
+  results = [];
+  while (target) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (play = target.getElementsByClassName('play')[0]) {
+        if ((iframe != null ? iframe.parentNode : void 0) === target) {
+          Player.stop(iframe);
+        } else {
+          if (iframe) {
+            Player.stop(iframe);
+          }
+          color = bg = null;
+          header = (ref1 = target.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
+          parent = header || play;
+          while (parent) {
+            if (parent.nodeType === 1) {
+              styles = window.getComputedStyle(parent);
+              if (styles.color.indexOf('rgba') === -1 || !styles.color.match(/,\s*0\)/)) {
+                if (color == null) {
+                  color = styles.color;
+                }
+              }
+              if (styles['background-color'].indexOf('rgba') === -1 || !styles['background-color'].match(/,\s*0\)/)) {
+                if (bg == null) {
+                  bg = styles['background-color'];
+                }
+              }
+            }
+            parent = parent.parentNode;
+          }
+          iframe = Player(play.id + '-player', play.getAttribute('data-src'), play.getAttribute('data-width'), play.getAttribute('data-height'), rgb2hex(color), rgb2hex(bg));
+          target.appendChild(iframe);
+          Player.reveal(iframe);
+        }
+        e.preventDefault();
+        break;
+      }
+    }
+    results.push(target = target.parentNode);
+  }
+  return results;
+});
+
+rgb2hex = function(rgb) {
+  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+  if (rgb && rgb.length === 4) {
+    return ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2);
+  }
+};
+
+window.exports = window.Player = Player;
+
+
+},{}],9:[function(require,module,exports){
 module.exports = {
   reflow: function(container) {
     var counter, heights, hidden, hole, holed, holes, i, id, ids, index, j, k, l, last, layout, layouts, len, len1, len2, len3, m, mutations, name, node, ref, ref1, ref2, stack, stacks;
@@ -1780,7 +2008,7 @@ module.exports = function(callback) {
   } else {
     protocol = '';
   }
-  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.4/gss.document.parser.js";
+  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.8/gss.document.parser.js";
   if (location.toString().indexOf('//localhost:8080') > -1) {
     return module.exports.load(protocol + "//localhost:8080/node_modules/gss-document/dist/gss.document.parser.js", callback, function() {
       return module.exports.load(url, callback);
